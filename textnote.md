@@ -99,3 +99,29 @@ syntax-FOR-File contents
 	FOR /F ["options"] %%parameter IN ("Text string to process") DO command
 syntax-FOR-Command Results
 	FOR /F ["options"] %%parameter IN ('command to process') DO command
+
+#5. copy, move, rename a file
+
+copy [option] source_01 [+ source_02] destination
+
+copy C:\src.txt C:\dest.txt
+	-> copy content from file src.txt to file dest.txt
+
+copy C:\src01.txt + C:\src02.txt C:\combine.txt
+	-> combine file src01.txt, src02.txt to combine.txt
+
+xcopy C:\src.txt C:\dest.txt
+	-> copy file with prompt to overwrite or not
+
+xcopy /y C:\src.txt C:\dest.txt
+xcopy /n C:\src.txt C:\dest.txt
+	-> copy file with default overwrite [Yes] or not [No]
+
+move C:\src.txt D:
+	-> move file src.txt from folder C: to D:
+
+move C:\src.txt C:\new.txt
+	-> rename file src.txt to new.txt
+
+del C:\*.txt
+	-> delete all TXT file in folder C:
